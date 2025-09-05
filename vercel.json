@@ -1,11 +1,1 @@
-{
-  "functions": {
-    "api/*.py": {
-      "runtime": "python3.9"
-    }
-  },
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+{}
