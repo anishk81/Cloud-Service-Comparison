@@ -1,26 +1,13 @@
 from http.server import BaseHTTPRequestHandler
 import json
-import sys
-import os
 
-# Add the current directory to Python path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    from data import get_all_categories
-except ImportError as e:
-    print(f"Import error: {e}")
-    # Fallback data structure
-    def get_all_categories():
-        return []
+CATEGORIES = ['Compute', 'Storage', 'Database', 'Networking', 'Messaging', 'Machine Learning', 'Analytics', 'Security', 'Developer Tools']
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            categories = get_all_categories()
-            
             response_data = {
-                'categories': categories
+                'categories': CATEGORIES
             }
             
             # Set CORS headers

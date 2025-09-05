@@ -1,27 +1,15 @@
 from http.server import BaseHTTPRequestHandler
 import json
-import sys
-import os
 
-# Add the current directory to Python path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    from data import get_all_services
-except ImportError as e:
-    print(f"Import error: {e}")
-    # Fallback data structure
-    def get_all_services():
-        return []
+# Sample services count
+SERVICES_COUNT = 8  # EC2, S3, Lambda, RDS, CloudFront, SNS, DynamoDB, SageMaker
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            services = get_all_services()
-            
             response_data = {
                 'status': 'healthy',
-                'services_count': len(services)
+                'services_count': SERVICES_COUNT
             }
             
             # Set CORS headers
