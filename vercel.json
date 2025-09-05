@@ -1,13 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
   "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    },
     {
       "src": "backend/index.py",
       "use": "@vercel/python"
@@ -19,18 +14,11 @@
       "dest": "backend/index.py"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
-      "dest": "frontend/$1"
+      "dest": "/index.html"
     }
-  ],
-  "env": {
-    "PYTHONPATH": "backend"
-  },
-  "functions": {
-    "backend/index.py": {
-      "runtime": "python3.9"
-    }
-  },
-  "installCommand": "cd frontend && npm install",
-  "buildCommand": "cd frontend && npm run build"
+  ]
 }
