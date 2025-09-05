@@ -53,7 +53,7 @@ export const apiService = {
 
   // Health check
   healthCheck: async (): Promise<{ status: string; services_count: number }> => {
-    const response = await api.get('/health');
+    const response = await api.get('/api/health');
     return response.data;
   },
 };
