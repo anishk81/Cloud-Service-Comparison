@@ -1,0 +1,253 @@
+.service-card {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 400px;
+}
+
+.dark-mode .service-card {
+  background: #2d2d2d;
+  border-color: #404040;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.dark-mode .service-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.service-card.selected {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.dark-mode .service-card.selected {
+  border-color: #4dabf7;
+  box-shadow: 0 4px 12px rgba(77, 171, 247, 0.4);
+}
+
+.service-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.service-name {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .service-name {
+  color: #e0e0e0;
+}
+
+.service-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.badge.free-tier {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .badge.free-tier {
+  background-color: #2d4a32;
+  color: #85e085;
+  border-color: #4a6b4a;
+}
+
+.badge.category {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .badge.category {
+  background-color: #404040;
+  color: #c0c0c0;
+  border-color: #555;
+}
+
+.service-description {
+  color: #6c757d;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .service-description {
+  color: #b0b0b0;
+}
+
+.key-features {
+  margin-bottom: 16px;
+}
+
+.key-features h4 {
+  margin: 0 0 8px 0;
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .key-features h4 {
+  color: #d0d0d0;
+}
+
+.key-features ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .key-features ul {
+  color: #b0b0b0;
+}
+
+.key-features li {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.more-features {
+  font-style: italic;
+  color: #6c757d !important;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .more-features {
+  color: #a0a0a0 !important;
+}
+
+.pricing-summary {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .pricing-summary {
+  background-color: #3d3d3d;
+}
+
+.pricing-summary strong {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .pricing-summary strong {
+  color: #e0e0e0;
+}
+
+.pricing-note {
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .pricing-note {
+  color: #b0b0b0;
+}
+
+.service-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-select {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-select:hover {
+  background-color: #0056b3;
+}
+
+.btn-selected {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-selected:hover {
+  background-color: #218838;
+}
+
+.btn-details {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-details:hover {
+  background-color: #545b62;
+}
+
+.btn-docs {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-docs:hover {
+  background-color: #138496;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    margin: 8px;
+    max-width: none;
+  }
+  
+  .service-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .service-badges {
+    align-self: flex-start;
+  }
+}
